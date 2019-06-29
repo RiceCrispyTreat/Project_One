@@ -12,9 +12,6 @@ var firebaseConfig = {
     
     let database = firebase.database();
 
-    
-
-
 $('#option_1')
 $('#option_2')
 $('#option_3')
