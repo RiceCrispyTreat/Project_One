@@ -18,4 +18,3 @@ $('#option_3')
 $('#option_4')
 
 //track image selection
-//
