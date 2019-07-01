@@ -37,9 +37,10 @@ let dramaCount = 0;
 let horrorCount = 0;
 let docuCount = 0;
 let fantasyCount = 0;
+let scifiCount = 0;
 
 
-//functions that increase value of their genre
+//functions that increase the value of their genre
 
 function adventurePlus () {
     adventureCount++;
@@ -81,13 +82,15 @@ function fantasyPlus () {
   console.log("fantasyCount: " + fantasyCount);
 }
 
-
+function scifiPlus () {
+  scifiCount++;
+  console.log("scifiCount: " + scifiCount);
+}
 //function that disables button from being clicked more than once
 
 function stopClick() {
   $(this).prop('disabled', true);
 }
-
 
 //functions called on click
 
@@ -115,3 +118,21 @@ $('#option_17').click(adventurePlus).click(stopClick);
 $('#option_18').click(comedyPlus).click(stopClick);
 $('#option_19').click(actionPlus).click(stopClick);
 $('#option_20').click(romancePlus).click(stopClick);
+
+//result text displayed
+
+$("#resultButton").on('click', function adventureWins() {  
+  if ((adventureCount > comedyCount) && 
+      (adventureCount > actionCount) && 
+      (adventureCount > romanceCount) &&
+      (adventureCount > dramaCount) &&
+      (adventureCount > horrorCount) &&
+      (adventureCount > docuCount) &&
+      (adventureCount > docuCount)){
+        $("#buttons").hide();
+        $("#resultText").append("<p>sup</p>");
+        console.log("hey sup");
+        $("#resultButton").hide();
+      }
+    
+})
