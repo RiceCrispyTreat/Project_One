@@ -14,6 +14,27 @@ var firebaseConfig = {
     
     let database = firebase.database();
 
+    // OMDb API key & AJAX
+    let advendureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future' , 'O Brother, Where Art Thou', 'Big Fish',];
+    let actionList = ['Die Hard'];
+    let comedyList = [];
+    let romanceList = [];
+
+
+    $('#movie-button').on('click', function(){
+
+    let title = $('#search').val();
+    console.log(title);
+    let queryURL = 'https://www.omdbapi.com/?t=' + title + '&apikey=d56ade4e';
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(results) {
+      console.log(results);
+    });
+  })
+
 
 //variables set at 0 for each genre
 
