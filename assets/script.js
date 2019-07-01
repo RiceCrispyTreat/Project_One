@@ -102,10 +102,10 @@ $('#option_14').click(comedyPlus).click(stopClick);
 $('#option_15').click(actionPlus).click(stopClick);
 $('#option_16').click(romancePlus).click(stopClick);
 
-$('#option_17').click(adventurePlus).click(stopClick);
-$('#option_18').click(comedyPlus).click(stopClick);
-$('#option_19').click(actionPlus).click(stopClick);
-$('#option_20').click(romancePlus).click(stopClick);
+$('#option_17').click(dramaPlus).click(stopClick);
+$('#option_18').click(horrorPlus).click(stopClick);
+$('#option_19').click(docuPlus).click(stopClick);
+$('#option_20').click(scifiPlus).click(stopClick);
 
 //result text displayed
 
@@ -116,11 +116,133 @@ $("#resultButton").on('click', function adventureWins() {
       (adventureCount > dramaCount) &&
       (adventureCount > horrorCount) &&
       (adventureCount > docuCount) &&
-      (adventureCount > docuCount)){
+      (adventureCount > fantasyCount) &&
+      (adventureCount > scifiCount)
+      ){
         $("#buttons").hide();
-        $("#resultText").append("<p>sup</p>");
-        console.log("hey sup");
+        $("#resultText").append("<p>Your movie genre is: Adventure</p>");
+        console.log("Genre= Adventure");
         $("#resultButton").hide();
       }
+  else if ((comedyCount > adventureCount) && 
+  (comedyCount > actionCount) && 
+  (comedyCount > romanceCount) &&
+  (comedyCount > dramaCount) &&
+  (comedyCount > horrorCount) &&
+  (comedyCount > docuCount) &&
+  (comedyCount > fantasyCount) &&
+  (comedyCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Comedy</p>");
+    console.log("Genre= Comedy");
+    $("#resultButton").hide();
     
+  }
+  else if ((actionCount > adventureCount) && 
+  (actionCount > comedyCount) && 
+  (actionCount > romanceCount) &&
+  (actionCount > dramaCount) &&
+  (actionCount > horrorCount) &&
+  (actionCount > docuCount) &&
+  (actionCount > fantasyCount) &&
+  (actionCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Action</p>");
+    console.log("Genre= Action");
+    $("#resultButton").hide();
+    
+  }
+  else if ((romanceCount > adventureCount) && 
+  (romanceCount > actionCount) && 
+  (romanceCount > comedyCount) &&
+  (romanceCount > dramaCount) &&
+  (romanceCount > horrorCount) &&
+  (romanceCount > docuCount) &&
+  (romanceCount > fantasyCount) &&
+  (romanceCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Romance</p>");
+    console.log("Genre= Romance");
+    $("#resultButton").hide();
+    
+  }
+  else if ((dramaCount > adventureCount) && 
+  (dramaCount > actionCount) && 
+  (dramaCount > romanceCount) &&
+  (dramaCount > comedyCount) &&
+  (dramaCount > horrorCount) &&
+  (dramaCount > docuCount) &&
+  (dramaCount > fantasyCount) &&
+  (dramaCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Drama</p>");
+    console.log("Genre= Drama");
+    $("#resultButton").hide();
+    
+  }
+  else if ((horrorCount > adventureCount) && 
+  (horrorCount > actionCount) && 
+  (horrorCount > romanceCount) &&
+  (horrorCount > dramaCount) &&
+  (horrorCount > comedyCount) &&
+  (horrorCount > docuCount) &&
+  (horrorCount > fantasyCount) &&
+  (horrorCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Horror</p>");
+    console.log("Genre= Horror");
+    $("#resultButton").hide();
+    
+  }
+  else if ((docuCount > adventureCount) && 
+  (docuCount > actionCount) && 
+  (docuCount > romanceCount) &&
+  (docuCount > dramaCount) &&
+  (docuCount > horrorCount) &&
+  (docuCount > comedyCount) &&
+  (docuCount > fantasyCount) &&
+  (docuCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Documentary</p>");
+    console.log("Genre= Documentary");
+    $("#resultButton").hide();
+    
+  }
+  else if ((fantasyCount > adventureCount) && 
+  (fantasyCount > actionCount) && 
+  (fantasyCount > romanceCount) &&
+  (fantasyCount > dramaCount) &&
+  (fantasyCount > horrorCount) &&
+  (fantasyCount > docuCount) &&
+  (fantasyCount > comedyCount) &&
+  (fantasyCount > scifiCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Fantasy</p>");
+    console.log("Genre= Fantasy");
+    $("#resultButton").hide();
+    
+  }
+  else if ((scifiCount > adventureCount) && 
+  (scifiCount > actionCount) && 
+  (scifiCount > romanceCount) &&
+  (scifiCount > dramaCount) &&
+  (scifiCount > horrorCount) &&
+  (scifiCount > docuCount) &&
+  (scifiCount > comedyCount) &&
+  (scifiCount > fantasyCount)
+  ){
+    $("#buttons").hide();
+    $("#resultText").append("<p>Your movie genre is: Sci-Fi</p>");
+    console.log("Genre= Sci-Fi");
+    $("#resultButton").hide();
+    
+  }
+  
 })
