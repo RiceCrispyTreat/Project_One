@@ -15,8 +15,8 @@ var firebaseConfig = {
     let database = firebase.database();
 
     // OMDb API key & AJAX
-    let advendureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future' , 'O Brother, Where Art Thou', ''];
-    let actionList = [];
+    let advendureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future' , 'O Brother, Where Art Thou', 'Big Fish',];
+    let actionList = ['Die Hard'];
     let comedyList = [];
     let romanceList = [];
 
