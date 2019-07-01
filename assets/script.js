@@ -123,6 +123,7 @@ $("#resultButton").on('click', function adventureWins() {
         $("#resultText").append("<p>Your movie genre is: Adventure</p>");
         console.log("Genre= Adventure");
         $("#resultButton").hide();
+        
       }
   else if ((comedyCount > adventureCount) && 
   (comedyCount > actionCount) && 
@@ -244,5 +245,4 @@ $("#resultButton").on('click', function adventureWins() {
     $("#resultButton").hide();
     
   }
-  
 })
