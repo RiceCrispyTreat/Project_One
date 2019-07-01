@@ -14,6 +14,18 @@ var firebaseConfig = {
     
     let database = firebase.database();
 
+    // OMDb API key & AJAX
+    let title = $('#movie-button').val();
+    let queryURL = 'https://www.omdbapi.com/?t=' + title + '&apikey=d56ade4e';
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(response) {
+      console.log(response);
+    });
+
+
 
 //variables set at 0 for each genre
 
