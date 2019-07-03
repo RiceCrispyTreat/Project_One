@@ -22,21 +22,35 @@ var firebaseConfig = {
     
     let resultArr = 
 
-  $('#movie-button').on('click', function(dasuGudFunction){
+    function movieFind(genre){
+      var searchArray;
+      switch (genre) {
+        default:
+          searchArray = adventureList;
+          break;
+          case "Romance":
+          searchArray = romanceList;
+          break;
+          case "action":
+          searchArray = actionList;
+          break;
+          case "comedy":
+          searchArray = comedyList;
+      }
 
-  let title = $('#search').val();
-  console.log(title);
-  let queryURL = 'https://www.omdbapi.com/?t=' + title + '&apikey=d56ade4e';
+      let queryURL = 'https://www.omdbapi.com/?t=' + searchArray[0] + '&apikey=d56ade4e';
+    
+      $.ajax({
+        url: queryURL,
+        method: 'GET'
+      }).then(function(results) {
+        console.log(results);
+      });
+    }
 
-  $.ajax({
-    url: queryURL,
-    method: 'GET'
-  }).then(function(results) {
-    console.log(results);
-  });
-})
+  //$('#movie-button').on('click', dasuGudFunction);
 
-
+movieFind(romanceList[0]);
 //variables set at 0 for each genre
 let adventureCount = 0;
 let comedyCount = 0;
@@ -146,9 +160,10 @@ if ((adventureCount > comedyCount) &&
     ){
       $("#buttons").hide();
       $("#resultText").append("<p>Your movie genre is: Adventure</p>");
-      let genre = ("Adventure");
+      let genre = (adventureList);
       console.log("Genre: " + genre);
       $("#resultButton").hide();
+      movieFind(genre);
       
     }
 else if ((comedyCount > adventureCount) && 
