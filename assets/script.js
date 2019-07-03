@@ -28,7 +28,7 @@ var firebaseConfig = {
         default:
           searchArray = adventureList;
           break;
-          case "Romance":
+          case "Romance":    
           searchArray = romanceList;
           break;
           case "action":
@@ -38,7 +38,7 @@ var firebaseConfig = {
           searchArray = comedyList;
       }
 
-      let queryURL = 'https://www.omdbapi.com/?t=' + searchArray[0] + '&apikey=d56ade4e';
+      let queryURL = 'https://www.omdbapi.com/?t=' +  + '&apikey=d56ade4e';
     
       $.ajax({
         url: queryURL,
@@ -50,17 +50,19 @@ var firebaseConfig = {
 
   //$('#movie-button').on('click', dasuGudFunction);
 
-movieFind(romanceList[0]);
+// movieFind(romanceList[0]);
+
 //variables set at 0 for each genre
 let adventureCount = 0;
 let comedyCount = 0;
 let actionCount = 0;
 let romanceCount = 0;
-let dramaCount = 0;
-let horrorCount = 0;
-let docuCount = 0;
-let fantasyCount = 0;
-let scifiCount = 0;
+
+// let dramaCount = 0;
+// let horrorCount = 0;
+// let docuCount = 0;
+// let fantasyCount = 0;
+// let scifiCount = 0;
 
 let genre = undefined;
 
@@ -90,25 +92,25 @@ dramaCount++;
 console.log("dramaCount: " + dramaCount);
 }
 
-function horrorPlus () {
-horrorCount++;
-console.log("horrorCount: " + horrorCount);
-}
+// function horrorPlus () {
+// horrorCount++;
+// console.log("horrorCount: " + horrorCount);
+// }
 
-function docuPlus () {
-docuCount++;
-console.log("docuCount: " + docuCount);
-}
+// function docuPlus () {
+// docuCount++;
+// console.log("docuCount: " + docuCount);
+// }
 
-function fantasyPlus () {
-fantasyCount++;
-console.log("fantasyCount: " + fantasyCount);
-}
+// function fantasyPlus () {
+// fantasyCount++;
+// console.log("fantasyCount: " + fantasyCount);
+// }
 
-function scifiPlus () {
-scifiCount++;
-console.log("scifiCount: " + scifiCount);
-}
+// function scifiPlus () {
+// scifiCount++;
+// console.log("scifiCount: " + scifiCount);
+// }
 
 //function that disables button from being clicked more than once
 function stopClick() {
