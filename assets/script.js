@@ -15,11 +15,12 @@ var firebaseConfig = {
     let database = firebase.database();
 
     // OMDb API key & AJAX
-    let advendureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future' , 'O Brother, Where Art Thou', 'Big Fish',];
-    let actionList = ['Die Hard'];
-    let comedyList = [];
-    let romanceList = [];
-
+    let adventureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future' , 'O Brother, Where Art Thou', 'Big Fish', 'Spirited Away'];
+    let actionList = ['Die Hard', 'Rambo', 'Predator', 'Last Action Hero', 'Aliens', 'Baby Driver'];
+    let comedyList = ['Dumb and Dumber', 'Better Off Dead', 'Austin Powers', 'Shrek', 'The Other Guys', 'Elf'];
+    let romanceList = ['The Notebook', 'P.S. I Love You', 'Mama Mia', 'Pretty In Pink', 'Sleepless In Seattle', 'Love Actually'];
+    
+    let resultArr = 
 
     $('#movie-button').on('click', function(){
 
