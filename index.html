@@ -10,47 +10,32 @@
      
 </head>
 <body>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">This is a quiz for mood</h1>
-      <p class="lead">Pick the image that suits your mood.</p>
-    </div>
-  </div><br>
-
-  <input type="text" id="search">
-  <br>
-  <button type="button" id="movie-button" class="btn btn-primary">Find Movie</button>
-  <br>
-  <br>
-
-<div class="images">
-
-<!-- <img src="assets\beach-sand-summer-46710.jpg">
-<img src="assets\boy-child-childhood-346796.jpg"> -->
-
+  
 </div>
 <div id="resultText"></div>
-<div id="buttons">
-  
-    <button id="option_1"><img id="theImg" src="assets\images\Action\film slate.jpg" style="width:200px;height:200px;"/></button>
-    <button id="option_2"><img id="theImg" src="assets\images\Action\SNIPER.jpg" style="width:200px;height:200px;"/></button>
-    <button id="option_3"><img id="theImg" src="assets\images\Adventure\drivingcar.jpg" style="width:200px;height:200px;"/></button>
-    <button id="option_4"><img id="theImg" src="assets\images\Adventure\trailhike.jpg" style="width:200px;height:200px;"/></button>
 
-  <br><br>
-
-    <button id="option_5"><img id="theImg" src="assets\images\Comedy\offdacliff.jpg" style="width:200px;height:200px;"/></button> 
-    <button id="option_6"><img id="theImg" src="assets\images\Comedy\statues.jpg" style="width:200px;height:200px;"/></button>
-    <button id="option_7"><img id="theImg" src="assets\images\Horror\haunted house.jpg" style="width:200px;height:200px;"/></button>
-    <button id="option_8"><img id="theImg" src="assets\images\Horror\lonelystreet.jpg" style="width:200px;height:200px;"/></button>
-
-  <br><br>
-
- 
-
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <img id="action" src="assets\images\Action\film slate.jpg">
+      <img id="horro" src="assets\images\Horror\lonelystreet.jpg">
+      <img id="comedy" src="assets\images\Comedy\statues.jpg">
+      <img id="romance" src="assets\images\Romance\horizon.jpg">
+      <img id="action" src="assets\images\Action\SNIPER.jpg">
+    </div>
+      <div class="column">
+      <img id="adventure" src="assets/images/Adventure/drivingcar.jpg" alt="">
+      <img id="comedy" src="assets\images\Comedy\offdacliff.jpg"> 
+      <img id="romance" src="assets\images\Romance\redrose.jpg">
+      <img id="adventure" src="assets/images/Adventure/trailhike.jpg" alt="">
+      <img id="horror" src="assets\images\Horror\haunted house.jpg">
+    </div>
+  </div>
+  </div>
 <br>
-
-<button id="resultButton">Get Results!</button>
+<div id="resultBtn">
+<button class="subBtn">Get Results!</button>
+</div>
 </body>
 
 <script

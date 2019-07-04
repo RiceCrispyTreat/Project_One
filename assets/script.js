@@ -19,8 +19,7 @@ var firebaseConfig = {
     let actionList = ['Die Hard', 'Rambo', 'Predator', 'Last Action Hero', 'Aliens', 'Baby Driver'];
     let comedyList = ['Dumb and Dumber', 'Better Off Dead', 'Austin Powers', 'Shrek', 'The Other Guys', 'Elf'];
     let romanceList = ['The Notebook', 'P.S. I Love You', 'Mama Mia', 'Pretty In Pink', 'Sleepless In Seattle', 'Love Actually'];
-    
-    let resultArr = 
+    let horrorList = ['The Shining', 'The Exorcist', 'The Conjuring', 'Paranormal Activity', 'The Thing', 'The Blair Witch']
 
     function movieFind(genre){
       var searchArray;
