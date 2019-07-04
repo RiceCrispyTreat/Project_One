@@ -35,6 +35,9 @@ var firebaseConfig = {
           break;
           case "comedy":
           searchArray = comedyList;
+          break;
+          case "horror":
+          searchArray =horrorList;
       }
 
       let queryURL = 'https://www.omdbapi.com/?t=' + searchArray[0] + '&apikey=d56ade4e';
@@ -43,7 +46,7 @@ var firebaseConfig = {
         url: queryURL,
         method: 'GET'
       }).then(function(results) {
-        console.log(results);
+        // console.log(results);
       });
     }
 
@@ -55,11 +58,7 @@ let adventureCount = 0;
 let comedyCount = 0;
 let actionCount = 0;
 let romanceCount = 0;
-let dramaCount = 0;
 let horrorCount = 0;
-let docuCount = 0;
-let fantasyCount = 0;
-let scifiCount = 0;
 
 let genre = undefined;
 
@@ -84,29 +83,9 @@ romanceCount++;
 console.log("romanceCount: " + romanceCount);
 }
 
-function dramaPlus () {
-dramaCount++;
-console.log("dramaCount: " + dramaCount);
-}
-
 function horrorPlus () {
 horrorCount++;
 console.log("horrorCount: " + horrorCount);
-}
-
-function docuPlus () {
-docuCount++;
-console.log("docuCount: " + docuCount);
-}
-
-function fantasyPlus () {
-fantasyCount++;
-console.log("fantasyCount: " + fantasyCount);
-}
-
-function scifiPlus () {
-scifiCount++;
-console.log("scifiCount: " + scifiCount);
 }
 
 //function that disables button from being clicked more than once
@@ -116,182 +95,74 @@ $(this).prop('disabled', true);
 
 //function that colors buttons when touched
 function toggle() {
-  $(this).css('background-color','aqua');
+  $(this).css('opacity','0.2');
 }
 
 //functions called on click
-$('#option_1').click(adventurePlus).click(toggle).click(stopClick);
-$('#option_2').click(comedyPlus).click(toggle).click(stopClick);
-$('#option_3').click(actionPlus).click(toggle).click(stopClick);
-$('#option_4').click(romancePlus).click(toggle).click(stopClick);
-
-$('#option_5').click(dramaPlus).click(toggle).click(stopClick);
-$('#option_6').click(horrorPlus).click(toggle).click(stopClick);
-$('#option_7').click(docuPlus).click(toggle).click(stopClick);
-$('#option_8').click(fantasyPlus).click(toggle).click(stopClick);
-
-$('#option_9').click(scifiPlus).click(toggle).click(stopClick);
-$('#option_10').click(comedyPlus).click(toggle).click(stopClick);
-$('#option_11').click(actionPlus).click(toggle).click(stopClick);
-$('#option_12').click(romancePlus).click(toggle).click(stopClick);
-
-$('#option_13').click(adventurePlus).click(toggle).click(stopClick);
-$('#option_14').click(comedyPlus).click(toggle).click(stopClick);
-$('#option_15').click(actionPlus).click(toggle).click(stopClick);
-$('#option_16').click(romancePlus).click(toggle).click(stopClick);
-
-$('#option_17').click(dramaPlus).click(toggle).click(stopClick);
-$('#option_18').click(horrorPlus).click(toggle).click(stopClick);
-$('#option_19').click(docuPlus).click(toggle).click(stopClick);
-$('#option_20').click(scifiPlus).click(toggle).click(stopClick);
-
+$('#adventure, #adventure2').click(adventurePlus).click(toggle).click(stopClick);
+$('#action, #action2').click(actionPlus).click(toggle).click(stopClick);
+$('#comedy, #comedy2').click(comedyPlus).click(toggle).click(stopClick);
+$('#romance, #romance2').click(romancePlus).click(toggle).click(stopClick);
+$('#horror, #horror2').click(horrorPlus).click(toggle).click(stopClick);
 
 //result text displayed
-$("#resultButton").on('click', function adventureWins() {  
+$("#subBtn").on('click', function adventureWins() {  
 if ((adventureCount > comedyCount) && 
     (adventureCount > actionCount) && 
     (adventureCount > romanceCount) &&
-    (adventureCount > dramaCount) &&
-    (adventureCount > horrorCount) &&
-    (adventureCount > docuCount) &&
-    (adventureCount > fantasyCount) &&
-    (adventureCount > scifiCount)
+    (adventureCount > horrorCount)
     ){
-      $("#buttons").hide();
+      $("img").hide();
       $("#resultText").append("<p>Your movie genre is: Adventure</p>");
       let genre = (adventureList);
       console.log("Genre: " + genre);
-      $("#resultButton").hide();
+      $("#subBtn").hide();
       movieFind(genre);
       
     }
 else if ((comedyCount > adventureCount) && 
 (comedyCount > actionCount) && 
 (comedyCount > romanceCount) &&
-(comedyCount > dramaCount) &&
-(comedyCount > horrorCount) &&
-(comedyCount > docuCount) &&
-(comedyCount > fantasyCount) &&
-(comedyCount > scifiCount)
+(comedyCount > horrorCount)
 ){
-  $("#buttons").hide();
+  $("img").hide();
   $("#resultText").append("<p>Your movie genre is: Comedy</p>");
   let genre = ("Comedy");
   console.log("Genre: " + genre);
-  $("#resultButton").hide();
+  $("#subBtn").hide();
   
 }
 else if ((actionCount > adventureCount) && 
 (actionCount > comedyCount) && 
 (actionCount > romanceCount) &&
-(actionCount > dramaCount) &&
-(actionCount > horrorCount) &&
-(actionCount > docuCount) &&
-(actionCount > fantasyCount) &&
-(actionCount > scifiCount)
+(actionCount > horrorCount)
 ){
-  $("#buttons").hide();
+  $("img").hide();
   $("#resultText").append("<p>Your movie genre is: Action</p>");
   let genre = ("Action");
   console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
+  $("#subBtn").hide();
 }
 else if ((romanceCount > adventureCount) && 
 (romanceCount > actionCount) && 
 (romanceCount > comedyCount) &&
-(romanceCount > dramaCount) &&
-(romanceCount > horrorCount) &&
-(romanceCount > docuCount) &&
-(romanceCount > fantasyCount) &&
-(romanceCount > scifiCount)
+(romanceCount > horrorCount)
 ){
-  $("#buttons").hide();
+  $("img").hide();
   $("#resultText").append("<p>Your movie genre is: Romance</p>");
   let genre = ("Romance");
   console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
-}
-else if ((dramaCount > adventureCount) && 
-(dramaCount > actionCount) && 
-(dramaCount > romanceCount) &&
-(dramaCount > comedyCount) &&
-(dramaCount > horrorCount) &&
-(dramaCount > docuCount) &&
-(dramaCount > fantasyCount) &&
-(dramaCount > scifiCount)
-){
-  $("#buttons").hide();
-  $("#resultText").append("<p>Your movie genre is: Drama</p>");
-  let genre = ("Drama");
-  console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
+  $("#subBtn").hide();
 }
 else if ((horrorCount > adventureCount) && 
 (horrorCount > actionCount) && 
 (horrorCount > romanceCount) &&
-(horrorCount > dramaCount) &&
-(horrorCount > comedyCount) &&
-(horrorCount > docuCount) &&
-(horrorCount > fantasyCount) &&
-(horrorCount > scifiCount)
+(horrorCount > comedyCount)
 ){
-  $("#buttons").hide();
+  $("img").hide();
   $("#resultText").append("<p>Your movie genre is: Horror</p>");
   let genre = ("Horror");
   console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
-  
+  $("#subBtn").hide();
 }
-else if ((docuCount > adventureCount) && 
-(docuCount > actionCount) && 
-(docuCount > romanceCount) &&
-(docuCount > dramaCount) &&
-(docuCount > horrorCount) &&
-(docuCount > comedyCount) &&
-(docuCount > fantasyCount) &&
-(docuCount > scifiCount)
-){
-  $("#buttons").hide();
-  $("#resultText").append("<p>Your movie genre is: Documentary</p>");
-  let genre = ("Documentary");
-  console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
-}
-else if ((fantasyCount > adventureCount) && 
-(fantasyCount > actionCount) && 
-(fantasyCount > romanceCount) &&
-(fantasyCount > dramaCount) &&
-(fantasyCount > horrorCount) &&
-(fantasyCount > docuCount) &&
-(fantasyCount > comedyCount) &&
-(fantasyCount > scifiCount)
-){
-  $("#buttons").hide();
-  $("#resultText").append("<p>Your movie genre is: Fantasy</p>");
-  let genre = ("Documentary");
-  console.log("Genre: " + genre);
-  $("#resultButton").hide();
-  
-}
-else if ((scifiCount > adventureCount) && 
-(scifiCount > actionCount) && 
-(scifiCount > romanceCount) &&
-(scifiCount > dramaCount) &&
-(scifiCount > horrorCount) &&
-(scifiCount > docuCount) &&
-(scifiCount > comedyCount) &&
-(scifiCount > fantasyCount)
-){
-  $("#buttons").hide();
-  $("#resultText").append("<p>Your movie genre is: Sci-Fi</p>");
-  let genre = ("Sci-Fi");
-  console.log("Genre: " + genre);
-  $("#resultButton").hide();
-}
-
 })

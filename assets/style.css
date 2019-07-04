@@ -24,11 +24,11 @@ img:hover {
   vertical-align: middle;
   width: 100%;
 }
-#resultBtn {
+.resultBtn {
   margin: 20px;
   text-align: center;
 }
-.subBtn {
+#subBtn {
   width: 200px;
   font-size: 18px;
   color: white;
@@ -37,7 +37,7 @@ img:hover {
   transition: 0.2s;
   border-radius:5px;
 }
-.subBtn:hover {
+#subBtn:hover {
   background-color: lightgray;
   color: black;
   border: black solid 2px;
