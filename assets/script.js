@@ -50,9 +50,6 @@ var firebaseConfig = {
       });
     }
 
-  //$('#movie-button').on('click', dasuGudFunction);
-
-movieFind(romanceList[0]);
 //variables set at 0 for each genre
 let adventureCount = 0;
 let comedyCount = 0;
