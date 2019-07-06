@@ -1,5 +1,4 @@
 body{
-  color: white;
   text-align: center;
   font-size: 16px;
   background-color: lightgray;
@@ -8,7 +7,7 @@ body{
   font-family:'Russo One', sans-serif;
   text-align: center;
   font-size: 56pt;
-  color: rgb(26, 120, 207);
+  color: rgb(207, 26, 26);
   text-shadow: 0 1px 0 #250374;
 }
 
