@@ -1,4 +1,7 @@
 body{
+  color: white;
+  text-align: center;
+  font-size: 16px;
   background-color: lightgray;
 }
 .title {
