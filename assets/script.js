@@ -18,7 +18,7 @@ let database = firebase.database();
 let adventureList = ['Indiana Jones', 'Inglourious Basterds', 'Back to the Future', 'O Brother, Where Art Thou', 'Big Fish', 'Spirited Away'];
 let actionList = ['Die Hard', 'Rambo', 'Predator', 'Last Action Hero', 'Aliens', 'Baby Driver'];
 let comedyList = ['Dumb and Dumber', 'Better Off Dead', 'Austin Powers', 'Shrek', 'The Other Guys', 'Elf'];
-let romanceList = ['The Notebook', 'P.S. I Love You', 'Mama Mia', 'Pretty In Pink', 'Sleepless In Seattle', 'Love Actually'];
+let romanceList = ['The Notebook', 'P.S. I Love You', 'Titanic', 'Pretty In Pink', 'Sleepless In Seattle', 'Love Actually'];
 let horrorList = ['The Shining', 'The Exorcist', 'The Conjuring', 'Paranormal Activity', 'The Thing', 'The Blair Witch'];
 
 let genreList = {
@@ -43,7 +43,7 @@ function displayMovie (genre) {
     let movieDiv = $("<div class='movie'>");
     let title = response.Title;
     let release = response.Released;
-    let rating = response.Rating;
+    let rating = response.Rated;
     let plot = response.Plot;
     let imgURL = response.Poster;
     let p = $("<p>").text(title);
@@ -57,10 +57,6 @@ function displayMovie (genre) {
     movieDiv.append(pTwo);
     movieDiv.append(pThree);
     $("#showMovie").prepend(movieDiv);
-    // movieDiv.append(pOne);
-    // movieDiv.append(pTwo);
-    // movieDiv.append(pThree);
-    // movieDiv.append(poster);
     console.log(response);
     
   });
@@ -73,6 +69,34 @@ function movieButton() {
 
   }
 }
+$("#searchBtn").on('click', function() {
+let movie = $("#searchBox").val().trim();
+let queryURL = 'https://www.omdbapi.com/?t=' + movie + '&apikey=d56ade4e';
+database.ref().push(movie);
+$.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function (response) {
+    let movieDiv = $("<div class='movie'>");
+    let title = response.Title;
+    let release = response.Released;
+    let rating = response.Rated;
+    let plot = response.Plot;
+    let imgURL = response.Poster;
+    let p = $("<p>").text(title);
+    let poster = $("<img>").attr("src", imgURL);
+    let pOne = $("<p>").text("Released: " + release);
+    let pTwo = $("<p>").text("Rating: " + rating);
+    let pThree = $("<p>").text("Plot: " + plot);
+    movieDiv.append(p);
+    movieDiv.append(poster);
+    movieDiv.append(pOne);
+    movieDiv.append(pTwo);
+    movieDiv.append(pThree);
+    $("#showMovie").append(movieDiv);
+  
+  })
+});
 //variables set at 0 for each genre
 let adventureCount = 0;
 let comedyCount = 0;
@@ -186,6 +210,6 @@ $("#subBtn").on('click', function adventureWins() {
     console.log("Genre: " + genre);
     $("#subBtn").hide();
   }
-
+    $("")
   displayMovie(genre);
 })
