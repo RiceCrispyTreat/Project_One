@@ -22,16 +22,17 @@ let romanceList = ['The Notebook', 'P.S. I Love You', 'Mama Mia', 'Pretty In Pin
 let horrorList = ['The Shining', 'The Exorcist', 'The Conjuring', 'Paranormal Activity', 'The Thing', 'The Blair Witch'];
 
 let genreList = {
-  adventureList,
-  actionList,
-  comedyList,
-  romanceList,
-  horrorList
+  "Adventure": adventureList,
+  "Action": actionList,
+  "Comedy": comedyList,
+  "Romance": romanceList,
+  "Horror": horrorList
 }
 
 // takes button and adds movie title, rating, plot, and poster.
-function displayMovie () {
-  let movie = $(this).attr("data-movie");
+function displayMovie (genre) {
+
+  let movie = genreList[genre][Math.round(Math.random()*genreList[genre].length)];
 
   let queryURL = 'https://www.omdbapi.com/?t=' + movie + '&apikey=d56ade4e';
 
@@ -64,7 +65,7 @@ function displayMovie () {
     
   });
 }
-displayMovie();
+
 function movieButton() {
   $('#buttons').empty();
   
@@ -127,6 +128,7 @@ $('#horror, #horror2').click(horrorPlus).click(toggle).click(stopClick);
 
 //result text displayed
 $("#subBtn").on('click', function adventureWins() {
+  let genre = "None";
   if ((adventureCount > comedyCount) &&
     (adventureCount > actionCount) &&
     (adventureCount > romanceCount) &&
@@ -134,7 +136,7 @@ $("#subBtn").on('click', function adventureWins() {
   ) {
     $(".genreImg").hide();
     $("#resultText").append("<p>Your movie genre is: Adventure</p>");
-    let genre = ("Adventure")
+    genre = ("Adventure")
     console.log("Genre: " + genre);
     $("#subBtn").hide();
 
@@ -146,7 +148,7 @@ $("#subBtn").on('click', function adventureWins() {
   ) {
     $(".genreImg").hide();
     $("#resultText").append("<p>Your movie genre is: Comedy</p>");
-    let genre = ("Comedy");
+    genre = ("Comedy");
     console.log("Genre: " + genre);
     $("#subBtn").hide();
 
@@ -158,7 +160,7 @@ $("#subBtn").on('click', function adventureWins() {
   ) {
     $(".genreImg").hide();
     $("#resultText").append("<p>Your movie genre is: Action</p>");
-    let genre = ("Action");
+    genre = ("Action");
     console.log("Genre: " + genre);
     $("#subBtn").hide();
   }
@@ -169,7 +171,7 @@ $("#subBtn").on('click', function adventureWins() {
   ) {
     $(".genreImg").hide();
     $("#resultText").append("<p>Your movie genre is: Romance</p>");
-    let genre = ("Romance");
+    genre = ("Romance");
     console.log("Genre: " + genre);
     $("#subBtn").hide();
   }
@@ -180,8 +182,10 @@ $("#subBtn").on('click', function adventureWins() {
   ) {
     $(".genreImg").hide();
     $("#resultText").append("<p>Your movie genre is: Horror</p>");
-    let genre = ("Horror");
+    genre = ("Horror");
     console.log("Genre: " + genre);
     $("#subBtn").hide();
   }
+
+  displayMovie(genre);
 })
